@@ -1,0 +1,842 @@
+kernel/atomkernel.c:457:21: warning: Redundant assignment of 'stack_check' to itself. [selfAssignment]
+        stack_check = stack_check;
+                    ^
+kernel/atomkernel.c:766:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+kernel/atomkernel.c:227:13: style: The scope of the variable 'lowest_pri' can be reduced. [variableScope]
+    int16_t lowest_pri;
+            ^
+kernel/atomkernel.c:763:38: style:inconclusive: Function 'atomIdleThread' argument 1 names different: declaration 'data' definition 'param'. [funcArgNamesDifferent]
+static void atomIdleThread (uint32_t param)
+                                     ^
+kernel/atomkernel.c:197:38: note: Function 'atomIdleThread' argument 1 names different: declaration 'data' definition 'param'.
+static void atomIdleThread (uint32_t data);
+                                     ^
+kernel/atomkernel.c:763:38: note: Function 'atomIdleThread' argument 1 names different: declaration 'data' definition 'param'.
+static void atomIdleThread (uint32_t param)
+                                     ^
+kernel/atomkernel.c:457:21: style: Variable 'stack_check' is assigned a value that is never used. [unreadVariable]
+        stack_check = stack_check;
+                    ^
+kernel/atomkernel.c:766:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+kernel/atomkernel.c:538:14: style: The scope of the variable 'stack_ptr' can be reduced. [variableScope]
+    uint8_t *stack_ptr;
+             ^
+kernel/atomkernel.c:539:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i;
+        ^
+kernel/atom.h:55:0: information: Skipping configuration 'THREAD_PORT_PRIV' since the value of 'THREAD_PORT_PRIV' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    THREAD_PORT_PRIV;
+^
+kernel/atommutex.c:196:15: style: The scope of the variable 'tcb_ptr' can be reduced. [variableScope]
+    ATOM_TCB *tcb_ptr;
+              ^
+kernel/atommutex.c:197:13: style: The scope of the variable 'woken_threads' can be reduced. [variableScope]
+    uint8_t woken_threads = FALSE;
+            ^
+kernel/atommutex.c:549:25: style: The scope of the variable 'curr_tcb_ptr' can be reduced. [variableScope]
+    ATOM_TCB *tcb_ptr, *curr_tcb_ptr;
+                        ^
+kernel/atomqueue.c:208:15: style: The scope of the variable 'tcb_ptr' can be reduced. [variableScope]
+    ATOM_TCB *tcb_ptr;
+              ^
+kernel/atomqueue.c:209:13: style: The scope of the variable 'woken_threads' can be reduced. [variableScope]
+    uint8_t woken_threads = FALSE;
+            ^
+kernel/atomqueue.c:790:15: style: The scope of the variable 'tcb_ptr' can be reduced. [variableScope]
+    ATOM_TCB *tcb_ptr;
+              ^
+kernel/atomqueue.c:884:15: style: The scope of the variable 'tcb_ptr' can be reduced. [variableScope]
+    ATOM_TCB *tcb_ptr;
+              ^
+kernel/atomsem.c:178:15: style: The scope of the variable 'tcb_ptr' can be reduced. [variableScope]
+    ATOM_TCB *tcb_ptr;
+              ^
+kernel/atomsem.c:179:13: style: The scope of the variable 'woken_threads' can be reduced. [variableScope]
+    uint8_t woken_threads = FALSE;
+            ^
+kernel/atomsem.c:501:15: style: The scope of the variable 'tcb_ptr' can be reduced. [variableScope]
+    ATOM_TCB *tcb_ptr;
+              ^
+kernel/atomtimer.c:193:17: style: The scope of the variable 'prev_ptr' can be reduced. [variableScope]
+    ATOM_TIMER *prev_ptr, *next_ptr;
+                ^
+ports/arm/atomport.c:170:26: style: Variable 'tcb_ptr->sp_save_ptr' is reassigned a value before the old one has been used. [redundantAssignment]
+    tcb_ptr->sp_save_ptr = stack_ptr;
+                         ^
+ports/arm/atomport.c:133:26: note: tcb_ptr->sp_save_ptr is assigned
+    tcb_ptr->sp_save_ptr = stack_ptr = stack_top;
+                         ^
+ports/arm/atomport.c:170:26: note: tcb_ptr->sp_save_ptr is overwritten
+    tcb_ptr->sp_save_ptr = stack_ptr;
+                         ^
+ports/arm/platforms/dm36x/atomport-private.c:249:14: style: The scope of the variable 'vector' can be reduced. [variableScope]
+    uint32_t vector;
+             ^
+ports/arm/platforms/dm36x/atomport-private.c:79:15: error: Comparing pointers that point to different objects [comparePointers]
+    while(src < &_end_vectors)
+              ^
+ports/arm/platforms/dm36x/atomport-private.c:40:22: note: Variable declared here.
+extern unsigned long _start_vectors, _end_vectors, _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                     ^
+ports/arm/platforms/dm36x/atomport-private.c:77:11: note: Address of variable taken here.
+    src = &_start_vectors;
+          ^
+ports/arm/platforms/dm36x/atomport-private.c:40:38: note: Variable declared here.
+extern unsigned long _start_vectors, _end_vectors, _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                     ^
+ports/arm/platforms/dm36x/atomport-private.c:79:17: note: Address of variable taken here.
+    while(src < &_end_vectors)
+                ^
+ports/arm/platforms/dm36x/atomport-private.c:79:15: note: Comparing pointers that point to different objects
+    while(src < &_end_vectors)
+              ^
+ports/arm/platforms/dm36x/atomport-private.c:92:15: error: Comparing pointers that point to different objects [comparePointers]
+    while(src < &_end_bss)
+              ^
+ports/arm/platforms/dm36x/atomport-private.c:40:87: note: Variable declared here.
+extern unsigned long _start_vectors, _end_vectors, _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                                                                      ^
+ports/arm/platforms/dm36x/atomport-private.c:91:11: note: Address of variable taken here.
+    src = &_start_bss;
+          ^
+ports/arm/platforms/dm36x/atomport-private.c:40:99: note: Variable declared here.
+extern unsigned long _start_vectors, _end_vectors, _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                                                                                  ^
+ports/arm/platforms/dm36x/atomport-private.c:92:17: note: Address of variable taken here.
+    while(src < &_end_bss)
+                ^
+ports/arm/platforms/dm36x/atomport-private.c:92:15: note: Comparing pointers that point to different objects
+    while(src < &_end_bss)
+              ^
+ports/arm/platforms/dm36x/atomport-private.c:86:15: error: Comparing pointers that point to different objects [comparePointers]
+    while(dst < &_end_data)
+              ^
+ports/arm/platforms/dm36x/atomport-private.c:40:63: note: Variable declared here.
+extern unsigned long _start_vectors, _end_vectors, _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                                              ^
+ports/arm/platforms/dm36x/atomport-private.c:85:11: note: Address of variable taken here.
+    dst = &_start_data;
+          ^
+ports/arm/platforms/dm36x/atomport-private.c:40:76: note: Variable declared here.
+extern unsigned long _start_vectors, _end_vectors, _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                                                           ^
+ports/arm/platforms/dm36x/atomport-private.c:86:17: note: Address of variable taken here.
+    while(dst < &_end_data)
+                ^
+ports/arm/platforms/dm36x/atomport-private.c:86:15: note: Comparing pointers that point to different objects
+    while(dst < &_end_data)
+              ^
+ports/arm/platforms/dm36x/uart.c:104:14: style: The scope of the variable 'dummy' can be reduced. [variableScope]
+    uint32_t dummy;
+             ^
+ports/arm/platforms/dm36x/uart.c:105:14: style: The scope of the variable 'divisor' can be reduced. [variableScope]
+    uint32_t divisor;
+             ^
+ports/arm/platforms/dm36x/uart.c:239:9: style: The scope of the variable 'todo' can be reduced. [variableScope]
+    int todo;
+        ^
+ports/arm/platforms/dm36x/uart.c:143:19: style: Variable 'dummy' is assigned a value that is never used. [unreadVariable]
+            dummy = UART_RBR(UART_BASE);
+                  ^
+ports/arm/platforms/qemu_integratorcp/modules.c:132:16: warning: Result of operator '|' is always true if one operand is non-zero. Did you intend to use '&'? [badBitmaskCheck]
+    if (status | ICP_PIC_IRQ_TIMERINT0)
+               ^
+ports/arm/platforms/qemu_integratorcp/modules.c:76:15: error: Comparing pointers that point to different objects [comparePointers]
+    while(src < &_end_bss)
+              ^
+ports/arm/platforms/qemu_integratorcp/modules.c:40:57: note: Variable declared here.
+extern unsigned long _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                                        ^
+ports/arm/platforms/qemu_integratorcp/modules.c:75:11: note: Address of variable taken here.
+    src = &_start_bss;
+          ^
+ports/arm/platforms/qemu_integratorcp/modules.c:40:69: note: Variable declared here.
+extern unsigned long _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                                                    ^
+ports/arm/platforms/qemu_integratorcp/modules.c:76:17: note: Address of variable taken here.
+    while(src < &_end_bss)
+                ^
+ports/arm/platforms/qemu_integratorcp/modules.c:76:15: note: Comparing pointers that point to different objects
+    while(src < &_end_bss)
+              ^
+ports/arm/platforms/qemu_integratorcp/modules.c:70:15: error: Comparing pointers that point to different objects [comparePointers]
+    while(dst < &_end_data)
+              ^
+ports/arm/platforms/qemu_integratorcp/modules.c:40:33: note: Variable declared here.
+extern unsigned long _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                ^
+ports/arm/platforms/qemu_integratorcp/modules.c:69:11: note: Address of variable taken here.
+    dst = &_start_data;
+          ^
+ports/arm/platforms/qemu_integratorcp/modules.c:40:46: note: Variable declared here.
+extern unsigned long _end_text, _start_data, _end_data, _start_bss, _end_bss;
+                                             ^
+ports/arm/platforms/qemu_integratorcp/modules.c:70:17: note: Address of variable taken here.
+    while(dst < &_end_data)
+                ^
+ports/arm/platforms/qemu_integratorcp/modules.c:70:15: note: Comparing pointers that point to different objects
+    while(dst < &_end_data)
+              ^
+ports/arm/platforms/qemu_integratorcp/uart.c:192:9: style: The scope of the variable 'todo' can be reduced. [variableScope]
+    int todo;
+        ^
+ports/arm/syscalls.c:207:25: error: Comparing pointers that point to different objects [comparePointers]
+    if (heap_end + incr > &heap_top)
+                        ^
+ports/arm/syscalls.c:192:14: note: Variable declared here.
+ extern char end;          /* Defined by the linker */
+             ^
+ports/arm/syscalls.c:200:20: note: Address of variable taken here.
+        heap_end = &end;
+                   ^
+ports/arm/syscalls.c:193:14: note: Variable declared here.
+ extern char heap_top;     /* Defined by the linker */
+             ^
+ports/arm/syscalls.c:207:27: note: Address of variable taken here.
+    if (heap_end + incr > &heap_top)
+                          ^
+ports/arm/syscalls.c:207:25: note: Comparing pointers that point to different objects
+    if (heap_end + incr > &heap_top)
+                        ^
+ports/armv7a/arm_irq.c:128:3: error: Null pointer dereference: vectors [nullPointer]
+  vectors[vec] = _start_vect[vec];
+  ^
+ports/armv7a/arm_irq.c:119:22: note: Assignment 'vectors=(unsigned int*)((void*)(0))', assigned value is 0
+ uint32_t *vectors = (uint32_t *)NULL;
+                     ^
+ports/armv7a/arm_irq.c:128:3: note: Null pointer dereference
+  vectors[vec] = _start_vect[vec];
+  ^
+ports/armv7a/arm_irq.c:136:8: error: Null pointer dereference: vectors [nullPointer]
+  if ((vectors[vec] != _start_vect[vec]) ||
+       ^
+ports/armv7a/arm_irq.c:119:22: note: Assignment 'vectors=(unsigned int*)((void*)(0))', assigned value is 0
+ uint32_t *vectors = (uint32_t *)NULL;
+                     ^
+ports/armv7a/arm_irq.c:136:8: note: Null pointer dereference
+  if ((vectors[vec] != _start_vect[vec]) ||
+       ^
+ports/armv7a/arm_irq.c:120:35: error: Pointer addition with NULL pointer. [nullPointerArithmetic]
+ uint32_t *vectors_data = vectors + CPU_IRQ_NR;
+                                  ^
+ports/armv7a/arm_irq.c:119:22: note: Assignment 'vectors=(unsigned int*)((void*)(0))', assigned value is 0
+ uint32_t *vectors = (uint32_t *)NULL;
+                     ^
+ports/armv7a/arm_irq.c:120:35: note: Null pointer addition
+ uint32_t *vectors_data = vectors + CPU_IRQ_NR;
+                                  ^
+ports/armv7a/arm_irq.c:84:6: style: The scope of the variable 'rc' can be reduced. [variableScope]
+ int rc = 0;
+     ^
+ports/armv7a/arm_irq.c:161:6: style: The scope of the variable 'rc' can be reduced. [variableScope]
+ int rc = 0;
+     ^
+ports/armv7a/arm_irq.c:159:32: style:inconclusive: Function 'arm_irq_register' argument 1 names different: declaration 'irq_no' definition 'irq'. [funcArgNamesDifferent]
+void arm_irq_register(uint32_t irq, arm_irq_handler_t hndl)
+                               ^
+ports/armv7a/arm_irq.h:52:32: note: Function 'arm_irq_register' argument 1 names different: declaration 'irq_no' definition 'irq'.
+void arm_irq_register(uint32_t irq_no, arm_irq_handler_t hndl);
+                               ^
+ports/armv7a/arm_irq.c:159:32: note: Function 'arm_irq_register' argument 1 names different: declaration 'irq_no' definition 'irq'.
+void arm_irq_register(uint32_t irq, arm_irq_handler_t hndl)
+                               ^
+ports/armv7a/arm_irq.c:84:9: style: Variable 'rc' is assigned a value that is never used. [unreadVariable]
+ int rc = 0;
+        ^
+ports/armv7a/arm_irq.c:161:9: style: Variable 'rc' is assigned a value that is never used. [unreadVariable]
+ int rc = 0;
+        ^
+ports/armv7a/atomport.c:101:22: style: The scope of the variable 'lr' can be reduced. [variableScope]
+ uint32_t tmp = 0x0, lr = 0x0;
+                     ^
+ports/armv7a/printk.c:55:7: style: Variable 'i' is assigned a value that is never used. [unreadVariable]
+    i = vsprintf(buf, (const int8_t *)format, args);
+      ^
+ports/avr/atomport-private.c:19:0: information: Skipping configuration 'F_CPU' since the value of 'F_CPU' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    OCR1A = (AVR_CPU_HZ / 256 / SYSTEM_TICKS_PER_SEC);
+^
+ports/avr/atomport-private.c:23:0: information: Skipping configuration 'TIMSK' since the value of 'TIMSK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    TIMSK = _BV(OCIE1A);
+^
+ports/avr/uart.c:69:0: information: Skipping configuration 'F_CPU' since the value of 'F_CPU' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  REG_UBRRL = (AVR_CPU_HZ / (16UL * baudrate)) - 1;
+^
+ports/avr/uart.c:66:0: information: Skipping configuration 'U2X' since the value of 'U2X' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  REG_UCSRA = _BV(U2X);             /* improve baud rate error by using 2x clk */
+^
+ports/avr/uart.c:103:0: information: Skipping configuration 'UCSRA' since the value of 'UCSRA' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    loop_until_bit_is_set(REG_UCSRA, BIT_UDRE);
+^
+ports/cortex-m/atomport.c:179:25: portability: 'stack_top' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    isr_ctx = stack_top - sizeof(*isr_ctx);
+                        ^
+ports/cortex-m/atomport.c:180:25: portability: 'stack_top' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    tsk_ctx = stack_top - sizeof(*isr_ctx) - sizeof(*tsk_ctx);
+                        ^
+ports/cortex-m/atomport.c:180:44: portability: 'stack_top-sizeof(*isr_ctx)' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    tsk_ctx = stack_top - sizeof(*isr_ctx) - sizeof(*tsk_ctx);
+                                           ^
+ports/cortex-m/common/helloworld.c:88:44: style:inconclusive: Function 'main_thread_func' argument 1 names different: declaration 'data' definition '__maybe_unused'. [funcArgNamesDifferent]
+static void main_thread_func(uint32_t data __maybe_unused)
+                                           ^
+ports/cortex-m/common/helloworld.c:44:39: note: Function 'main_thread_func' argument 1 names different: declaration 'data' definition '__maybe_unused'.
+static void main_thread_func(uint32_t data);
+                                      ^
+ports/cortex-m/common/helloworld.c:88:44: note: Function 'main_thread_func' argument 1 names different: declaration 'data' definition '__maybe_unused'.
+static void main_thread_func(uint32_t data __maybe_unused)
+                                           ^
+ports/cortex-m/common/lm4f_con.c:46:11: style: The scope of the variable 'ptr' can be reduced. [variableScope]
+    char *ptr;
+          ^
+ports/cortex-m/common/lm4f_con.c:72:11: style: The scope of the variable 'ptr' can be reduced. [variableScope]
+    char *ptr;
+          ^
+ports/cortex-m/common/stm32_con.c:46:11: style: The scope of the variable 'ptr' can be reduced. [variableScope]
+    char *ptr;
+          ^
+ports/cortex-m/common/stm32_con.c:70:11: style: The scope of the variable 'ptr' can be reduced. [variableScope]
+    char *ptr;
+          ^
+ports/cortex-m/common/stubs.c:78:0: information: Skipping configuration 'MST_SIZE' since the value of 'MST_SIZE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    if(heap_end + incr + MST_SIZE <= (char *) vector_table.initial_sp_value){
+^
+ports/cortex-m/tests-main.c:267:9: warning: %lu in format string (no. 1) requires 'unsigned long' but the argument type is 'unsigned int'. [invalidPrintfArgType_uint]
+        printf("Fail(%lu)\n", test_status);
+        ^
+ports/cortex-m/tests-main.c:253:13: warning: %lu in format string (no. 1) requires 'unsigned long' but the argument type is 'unsigned int'. [invalidPrintfArgType_uint]
+            printf("MainUse: %lu\n", used_bytes);
+            ^
+ports/mips/8250-serial.c:40:23: portability: '(void*)0xc00003f8' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return ioreadb(PORT1 + offset);
+                      ^
+ports/mips/8250-serial.c:45:17: portability: '(void*)0xc00003f8' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowriteb(PORT1 + offset, value);
+                ^
+ports/mips/atomport.c:65:46: portability: 'stack_top' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ uint32_t stack_start = (uint32_t)(stack_top - (WORD_SIZE * NUM_CTX_REGS));
+                                             ^
+ports/mips/printk.c:54:7: style: Variable 'i' is assigned a value that is never used. [unreadVariable]
+    i = vsprintf(buf, (const int8_t *)format, args);
+      ^
+ports/stm8/stm8s-periphs/stm8s_clk.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 16 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+ports/stm8/stm8s-periphs/stm8s_clk.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+ports/stm8/stm8s-periphs/stm8s_gpio.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 16 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+ports/stm8/stm8s-periphs/stm8s_gpio.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+ports/stm8/stm8s-periphs/stm8s_itc.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 20 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+ports/stm8/stm8s-periphs/stm8s_itc.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+ports/stm8/stm8s-periphs/stm8s_tim1.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 16 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+ports/stm8/stm8s-periphs/stm8s_tim1.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+ports/stm8/stm8s-periphs/stm8s_uart2.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 16 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+ports/stm8/stm8s-periphs/stm8s_uart2.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+ports/stm8/tests-main.c:195:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+ports/stm8/tests-main.c:195:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/kern1.c:116:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/kern1.c:116:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/kern2.c:84:13: style: The comparison 'one != 1' is always false. [knownConditionTrueFalse]
+    if (one != 1)
+            ^
+tests/kern2.c:56:19: note: 'one' is assigned value '1' here.
+    uint8_t one = 1;
+                  ^
+tests/kern2.c:84:13: note: The comparison 'one != 1' is always false.
+    if (one != 1)
+            ^
+tests/kern2.c:89:13: style: The comparison 'two != 2' is always false. [knownConditionTrueFalse]
+    if (two != 2)
+            ^
+tests/kern2.c:57:19: note: 'two' is assigned value '2' here.
+    uint8_t two = 2;
+                  ^
+tests/kern2.c:89:13: note: The comparison 'two != 2' is always false.
+    if (two != 2)
+            ^
+tests/kern2.c:94:15: style: The comparison 'three != 3' is always false. [knownConditionTrueFalse]
+    if (three != 3)
+              ^
+tests/kern2.c:58:21: note: 'three' is assigned value '3' here.
+    uint8_t three = 3;
+                    ^
+tests/kern2.c:94:15: note: The comparison 'three != 3' is always false.
+    if (three != 3)
+              ^
+tests/kern2.c:99:14: style: The comparison 'four != 4' is always false. [knownConditionTrueFalse]
+    if (four != 4)
+             ^
+tests/kern2.c:59:20: note: 'four' is assigned value '4' here.
+    uint8_t four = 4;
+                   ^
+tests/kern2.c:99:14: note: The comparison 'four != 4' is always false.
+    if (four != 4)
+             ^
+tests/kern2.c:104:14: style: The comparison 'five != 5' is always false. [knownConditionTrueFalse]
+    if (five != 5)
+             ^
+tests/kern2.c:60:20: note: 'five' is assigned value '5' here.
+    uint8_t five = 5;
+                   ^
+tests/kern2.c:104:14: note: The comparison 'five != 5' is always false.
+    if (five != 5)
+             ^
+tests/kern2.c:109:13: style: The comparison 'six != 6' is always false. [knownConditionTrueFalse]
+    if (six != 6)
+            ^
+tests/kern2.c:61:19: note: 'six' is assigned value '6' here.
+    uint8_t six = 6;
+                  ^
+tests/kern2.c:109:13: note: The comparison 'six != 6' is always false.
+    if (six != 6)
+            ^
+tests/kern2.c:114:15: style: The comparison 'seven != 7' is always false. [knownConditionTrueFalse]
+    if (seven != 7)
+              ^
+tests/kern2.c:62:21: note: 'seven' is assigned value '7' here.
+    uint8_t seven = 7;
+                    ^
+tests/kern2.c:114:15: note: The comparison 'seven != 7' is always false.
+    if (seven != 7)
+              ^
+tests/kern2.c:119:15: style: The comparison 'eight != 8' is always false. [knownConditionTrueFalse]
+    if (eight != 8)
+              ^
+tests/kern2.c:63:21: note: 'eight' is assigned value '8' here.
+    uint8_t eight = 8;
+                    ^
+tests/kern2.c:119:15: note: The comparison 'eight != 8' is always false.
+    if (eight != 8)
+              ^
+tests/kern2.c:124:14: style: The comparison 'nine != 9' is always false. [knownConditionTrueFalse]
+    if (nine != 9)
+             ^
+tests/kern2.c:64:20: note: 'nine' is assigned value '9' here.
+    uint8_t nine = 9;
+                   ^
+tests/kern2.c:124:14: note: The comparison 'nine != 9' is always false.
+    if (nine != 9)
+             ^
+tests/kern2.c:129:13: style: The comparison 'ten != 10' is always false. [knownConditionTrueFalse]
+    if (ten != 10)
+            ^
+tests/kern2.c:65:19: note: 'ten' is assigned value '10' here.
+    uint8_t ten = 10;
+                  ^
+tests/kern2.c:129:13: note: The comparison 'ten != 10' is always false.
+    if (ten != 10)
+            ^
+tests/kern2.c:134:16: style: The comparison 'eleven != 11' is always false. [knownConditionTrueFalse]
+    if (eleven != 11)
+               ^
+tests/kern2.c:66:23: note: 'eleven' is assigned value '11' here.
+    uint16_t eleven = 11;
+                      ^
+tests/kern2.c:134:16: note: The comparison 'eleven != 11' is always false.
+    if (eleven != 11)
+               ^
+tests/kern2.c:139:16: style: The comparison 'twelve != 12' is always false. [knownConditionTrueFalse]
+    if (twelve != 12)
+               ^
+tests/kern2.c:67:23: note: 'twelve' is assigned value '12' here.
+    uint16_t twelve = 12;
+                      ^
+tests/kern2.c:139:16: note: The comparison 'twelve != 12' is always false.
+    if (twelve != 12)
+               ^
+tests/kern2.c:144:18: style: The comparison 'thirteen != 13' is always false. [knownConditionTrueFalse]
+    if (thirteen != 13)
+                 ^
+tests/kern2.c:68:25: note: 'thirteen' is assigned value '13' here.
+    uint16_t thirteen = 13;
+                        ^
+tests/kern2.c:144:18: note: The comparison 'thirteen != 13' is always false.
+    if (thirteen != 13)
+                 ^
+tests/kern2.c:149:18: style: The comparison 'fourteen != 14' is always false. [knownConditionTrueFalse]
+    if (fourteen != 14)
+                 ^
+tests/kern2.c:69:25: note: 'fourteen' is assigned value '14' here.
+    uint16_t fourteen = 14;
+                        ^
+tests/kern2.c:149:18: note: The comparison 'fourteen != 14' is always false.
+    if (fourteen != 14)
+                 ^
+tests/kern2.c:154:17: style: The comparison 'fifteen != 15' is always false. [knownConditionTrueFalse]
+    if (fifteen != 15)
+                ^
+tests/kern2.c:70:24: note: 'fifteen' is assigned value '15' here.
+    uint16_t fifteen = 15;
+                       ^
+tests/kern2.c:154:17: note: The comparison 'fifteen != 15' is always false.
+    if (fifteen != 15)
+                ^
+tests/kern2.c:159:17: style: The comparison 'sixteen != 16' is always false. [knownConditionTrueFalse]
+    if (sixteen != 16)
+                ^
+tests/kern2.c:71:24: note: 'sixteen' is assigned value '16' here.
+    uint32_t sixteen = 16;
+                       ^
+tests/kern2.c:159:17: note: The comparison 'sixteen != 16' is always false.
+    if (sixteen != 16)
+                ^
+tests/kern2.c:164:19: style: The comparison 'seventeen != 17' is always false. [knownConditionTrueFalse]
+    if (seventeen != 17)
+                  ^
+tests/kern2.c:72:26: note: 'seventeen' is assigned value '17' here.
+    uint32_t seventeen = 17;
+                         ^
+tests/kern2.c:164:19: note: The comparison 'seventeen != 17' is always false.
+    if (seventeen != 17)
+                  ^
+tests/kern2.c:169:18: style: The comparison 'eighteen != 18' is always false. [knownConditionTrueFalse]
+    if (eighteen != 18)
+                 ^
+tests/kern2.c:73:25: note: 'eighteen' is assigned value '18' here.
+    uint32_t eighteen = 18;
+                        ^
+tests/kern2.c:169:18: note: The comparison 'eighteen != 18' is always false.
+    if (eighteen != 18)
+                 ^
+tests/kern2.c:174:18: style: The comparison 'nineteen != 19' is always false. [knownConditionTrueFalse]
+    if (nineteen != 19)
+                 ^
+tests/kern2.c:74:25: note: 'nineteen' is assigned value '19' here.
+    uint32_t nineteen = 19;
+                        ^
+tests/kern2.c:174:18: note: The comparison 'nineteen != 19' is always false.
+    if (nineteen != 19)
+                 ^
+tests/kern2.c:179:16: style: The comparison 'twenty != 20' is always false. [knownConditionTrueFalse]
+    if (twenty != 20)
+               ^
+tests/kern2.c:75:23: note: 'twenty' is assigned value '20' here.
+    uint32_t twenty = 20;
+                      ^
+tests/kern2.c:179:16: note: The comparison 'twenty != 20' is always false.
+    if (twenty != 20)
+               ^
+tests/mutex1.c:302:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/mutex1.c:341:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/mutex1.c:302:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/mutex1.c:341:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/mutex2.c:307:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/mutex2.c:307:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/mutex4.c:256:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/mutex4.c:252:13: style: The scope of the variable 'status' can be reduced. [variableScope]
+    uint8_t status;
+            ^
+tests/mutex4.c:256:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/mutex5.c:267:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/mutex5.c:264:13: style: The scope of the variable 'status' can be reduced. [variableScope]
+    uint8_t status;
+            ^
+tests/mutex5.c:267:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/mutex6.c:258:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/mutex6.c:255:13: style: The scope of the variable 'status' can be reduced. [variableScope]
+    uint8_t status;
+            ^
+tests/mutex6.c:258:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/mutex7.c:221:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/mutex7.c:221:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/mutex9.c:197:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/mutex9.c:197:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/queue10.c:82:19: style: The scope of the variable 'tx_count' can be reduced. [variableScope]
+    int failures, tx_count, rx_count;
+                  ^
+tests/queue10.c:82:29: style: The scope of the variable 'rx_count' can be reduced. [variableScope]
+    int failures, tx_count, rx_count;
+                            ^
+tests/queue2.c:249:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/queue2.c:288:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/queue2.c:249:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/queue2.c:288:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/queue3.c:281:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/queue3.c:324:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/queue3.c:281:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/queue3.c:324:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/queue4.c:72:9: style: The scope of the variable 'count' can be reduced. [variableScope]
+    int count;
+        ^
+tests/queue6.c:228:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/queue6.c:228:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/queue8.c:59:14: style: The scope of the variable 'start_time' can be reduced. [variableScope]
+    uint32_t start_time, end_time;
+             ^
+tests/queue8.c:59:26: style: The scope of the variable 'end_time' can be reduced. [variableScope]
+    uint32_t start_time, end_time;
+                         ^
+tests/queue9.c:252:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/queue9.c:247:13: style: The scope of the variable 'status' can be reduced. [variableScope]
+    uint8_t status;
+            ^
+tests/queue9.c:252:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/sem1.c:309:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/sem1.c:351:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/sem1.c:309:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/sem1.c:351:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/sem4.c:245:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/sem4.c:241:13: style: The scope of the variable 'status' can be reduced. [variableScope]
+    uint8_t status;
+            ^
+tests/sem4.c:245:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/sem5.c:205:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/sem5.c:205:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/sem6.c:190:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/sem6.c:190:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/sem7.c:274:11: warning: Redundant assignment of 'param' to itself. [selfAssignment]
+    param = param;
+          ^
+tests/sem7.c:271:13: style: The scope of the variable 'status' can be reduced. [variableScope]
+    uint8_t status;
+            ^
+tests/sem7.c:274:11: style: Variable 'param' is assigned a value that is never used. [unreadVariable]
+    param = param;
+          ^
+tests/sem8.c:231:21: style: The scope of the variable 'count' can be reduced. [variableScope]
+    int sleep_flag, count, failures;
+                    ^
+tests/timer2.c:167:14: style: The scope of the variable 'start_time' can be reduced. [variableScope]
+    uint32_t start_time, end_time;
+             ^
+ports/arm/platforms/dm36x/atomport-private.c:247:0: style: The function '__interrupt_dispatcher' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/atomport-private.c:301:0: style: The function '__null_handler' is never used. [unusedFunction]
+
+^
+ports/stm8/uart.c:130:0: style: The function '__write' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:77:0: style: The function '_close' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:226:0: style: The function '_exit' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:89:0: style: The function '_fstat' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:103:0: style: The function '_isatty' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:115:0: style: The function '_lseek' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/atomport-private.c:71:0: style: The function '_mainCRTStartup' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:134:0: style: The function '_open' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:152:0: style: The function '_read' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:190:0: style: The function '_sbrk' is never used. [unusedFunction]
+
+^
+ports/arm/syscalls.c:171:0: style: The function '_write' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/atomport-private.c:200:0: style: The function 'archIntEnable' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/atomport-private.c:169:0: style: The function 'archIntInstallISR' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/timer.c:222:0: style: The function 'archUsecDiff' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/timer.c:196:0: style: The function 'archUsecStart' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/timer.c:120:0: style: The function 'archUsleep' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/timer.c:174:0: style: The function 'archUsleepCheckExpired' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/timer.c:150:0: style: The function 'archUsleepStart' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:178:0: style: The function 'arm_irq_disable' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:173:0: style: The function 'arm_irq_enable' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:196:0: style: The function 'arm_irq_restore' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:183:0: style: The function 'arm_irq_save' is never used. [unusedFunction]
+
+^
+ports/armv7a/pb-a8/arm_pic.c:220:0: style: The function 'arm_pic_mask' is never used. [unusedFunction]
+
+^
+ports/armv7a/pb-a8/arm_timer.c:49:0: style: The function 'arm_timer_disable' is never used. [unusedFunction]
+
+^
+ports/armv7a/pb-a8/arm_uart.c:51:0: style: The function 'arm_uart_getc' is never used. [unusedFunction]
+
+^
+kernel/atomsem.c:607:0: style: The function 'atomSemResetCount' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:64:0: style: The function 'do_data_abort' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:107:0: style: The function 'do_fiq' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:82:0: style: The function 'do_irq' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:73:0: style: The function 'do_not_used' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:55:0: style: The function 'do_prefetch_abort' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:46:0: style: The function 'do_software_interrupt' is never used. [unusedFunction]
+
+^
+ports/armv7a/arm_irq.c:37:0: style: The function 'do_undefined_instruction' is never used. [unusedFunction]
+
+^
+ports/mips/atomport-timer.c:55:0: style: The function 'handle_mips_systick' is never used. [unusedFunction]
+
+^
+ports/cortex-m/atomport.c:112:0: style: The function 'hard_fault_handler' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/dm36x/atomport-private.c:107:0: style: The function 'low_level_init' is never used. [unusedFunction]
+
+^
+ports/armv7a/string.c:42:0: style: The function 'memset' is never used. [unusedFunction]
+
+^
+ports/armv7a/string.c:49:0: style: The function 'memsetw' is never used. [unusedFunction]
+
+^
+ports/mips/atomport-interrupts.c:55:0: style: The function 'mips_disable_global_interrupts' is never used. [unusedFunction]
+
+^
+ports/mips/atomport-interrupts.c:50:0: style: The function 'mips_enable_global_interrupts' is never used. [unusedFunction]
+
+^
+ports/cortex-m/atomport.c:106:0: style: The function 'nmi_handler' is never used. [unusedFunction]
+
+^
+ports/arm/platforms/qemu_integratorcp/modules.c:159:0: style: The function 'null_handler' is never used. [unusedFunction]
+
+^
+ports/cortex-m/atomport.c:91:0: style: The function 'sys_tick_handler' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
